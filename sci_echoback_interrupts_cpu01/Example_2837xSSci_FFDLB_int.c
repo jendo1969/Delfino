@@ -204,10 +204,8 @@ void scib_fifo_init()
    // SCIC at115200 baud
    ScibRegs.SCIHBAUD.all = 0x0000;
    ScibRegs.SCILBAUD.all = 53;
-//   ScibRegs.SCIFFTX.all=0xC022;
-//   ScibRegs.SCIFFRX.all=0x0022;
    ScibRegs.SCIFFTX.all=0xC020; // EMPTY INT
-   ScibRegs.SCIFFRX.all=0x0021; //Å@one char INT
+   ScibRegs.SCIFFRX.all=0x0021; //¬Å@one char INT
    ScibRegs.SCIFFCT.all=0x00;
 
    ScibRegs.SCICTL1.all =0x0023;     // Relinquish SCI from Reset
