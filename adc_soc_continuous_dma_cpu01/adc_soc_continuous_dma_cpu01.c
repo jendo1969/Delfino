@@ -293,26 +293,6 @@ void main(void)
         __asm(" NOP");
     }
 
-/*
-    char buff[] = "Hello World!!";
-    for( i = 0; i<13; i++)
-    {
-        Txbuff[Tx_w_idx++] = buff[i];
-        if(Tx_w_idx >= BUFFMAX)
-        {
-            Tx_w_idx = 0;
-        }
-        if(Tx_w_idx == Tx_r_idx)
-        {
-            Tx_w_idx--;
-            if(Tx_w_idx < 0)
-            {
-                Tx_w_idx = BUFFMAX;
-            }
-        }
-    }
-*/
-
     cnt = 0;
     unsigned char flag = 0;
     while(1)
@@ -360,16 +340,6 @@ void main(void)
                         {
                             Tx_w_idx = 0;
                         }
-                        /*
-                        if(Tx_w_idx == Tx_r_idx)
-                        {
-                            Tx_w_idx--;
-                            if(Tx_w_idx < 0)
-                            {
-                                Tx_w_idx = BUFFMAX;
-                            }
-                        }
-                        */
                     }
                 }
                 else
@@ -480,7 +450,7 @@ void scib_fifo_init()
    ScibRegs.SCIHBAUD.all = 0x0000;
    ScibRegs.SCILBAUD.all = 53;
    ScibRegs.SCIFFTX.all=0xC020; // EMPTY INT
-   ScibRegs.SCIFFRX.all=0x0021; //@one char INT
+   ScibRegs.SCIFFRX.all=0x0021; //Â@one char INT
    ScibRegs.SCIFFCT.all=0x00;
 
    ScibRegs.SCICTL1.all =0x0023;     // Relinquish SCI from Reset
